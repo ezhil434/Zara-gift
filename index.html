@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Premium Gift</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+display:flex;justify-content:center;align-items:center;
+min-height:100vh;overflow:hidden;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#5d14ff,#0066ff);
+}
+#confetti{position:fixed;inset:0;pointer-events:none}
+.p{position:absolute;width:8px;height:18px;animation:fall linear infinite}
+@keyframes fall{
+from{transform:translateY(-30px) rotate(0)}
+to{transform:translateY(110vh) rotate(720deg)}
+}
+.card{
+position:relative;
+width:min(92vw,430px);
+padding:34px;
+border-radius:28px;
+text-align:center;
+color:#fff;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+border:2px solid rgba(255,255,255,.75);
+box-shadow:
+0 0 18px rgba(255,255,255,.35),
+0 0 40px rgba(0,162,255,.35),
+0 25px 45px rgba(0,0,0,.35);
+animation:cardGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes cardGlow{
+from{box-shadow:0 0 18px rgba(255,255,255,.35),0 0 40px rgba(0,162,255,.35),0 25px 45px rgba(0,0,0,.35)}
+to{box-shadow:0 0 30px rgba(255,255,255,.65),0 0 70px rgba(0,162,255,.6),0 25px 45px rgba(0,0,0,.4)}
+}
+.gift{
+font-size:88px;
+display:inline-block;
+filter:
+drop-shadow(0 0 10px rgba(255,215,0,.95))
+drop-shadow(0 0 25px rgba(255,170,0,.9))
+drop-shadow(0 0 50px rgba(255,120,0,.75));
+animation:bounce 1.6s infinite ease-in-out;
+}
+@keyframes bounce{
+50%{transform:translateY(-10px) scale(1.08)}
+}
+h1{margin:18px 0 10px;font-size:2.2rem}
+p{margin-bottom:28px}
+.btn{
+display:inline-block;
+padding:18px 34px;
+border-radius:999px;
+background:linear-gradient(90deg,#008cff,#005eff);
+border:3px solid rgba(255,255,255,.9);
+color:#fff;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+box-shadow:0 0 18px #3aa8ff,0 0 40px #007bff;
+animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+50%{transform:scale(1.08)}
+}
+</style>
+</head>
+<body>
+<div id="confetti"></div>
+<div class="card">
+<div class="gift">🎁</div>
+<h1>SPECIAL GIFT</h1>
+<p>Click below to claim your reward.</p>
+<a class="btn" href="https://linkthem.net/aff_c?offer_id=241&aff_id=177609" target="_blank" rel="noopener noreferrer">
+    🎁 Click Here To Claim
+</a>
+</div>
+<script>
+const colors=["#fff","#ff4d4d","#00e5ff","#7cff00","#ffd700","#ff66ff"];
+const c=document.getElementById("confetti");
+for(let i=0;i<120;i++){
+let d=document.createElement("div");
+d.className="p";
+d.style.left=Math.random()*100+"vw";
+d.style.background=colors[Math.floor(Math.random()*colors.length)];
+d.style.animationDuration=(4+Math.random()*4)+"s";
+d.style.animationDelay=Math.random()*5+"s";
+c.appendChild(d);
+}
+</script>
+</body>
+</html>
